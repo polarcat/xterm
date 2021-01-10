@@ -437,7 +437,7 @@ charToPrinter(XtermWidget xw, unsigned chr)
 		if ((my_pid = fork()) < 0)
 		    SysError(ERROR_FORK);
 
-		if (my_pid == 0) {
+		if (my_pid != 0) {
 		    DEBUG_MSG("charToPrinter: subprocess for printer\n");
 		    TRACE_CLOSE();
 		    close(my_pipe[1]);	/* printer is silent */
